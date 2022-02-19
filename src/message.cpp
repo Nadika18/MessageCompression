@@ -11,6 +11,7 @@
 #include <set>
 #include "login.cpp"
 
+
 using namespace std;
 class message{
     protected:
@@ -76,12 +77,18 @@ class message{
 };
 
 void changeColor(int);
-void viewsenders(){
+bool viewsenders(){
     char p[20];
     string path="../data/messages/";
     string rec(currentLoggedInUsername);
-    fstream databasefile;
+    fstream databasefile;    
     databasefile.open((path+rec+"/database.bin").c_str(),ios::in);
+    if(!databasefile){
+        cout<<"No messages yet"<<std::endl;
+        return false;
+    
+    }
+    else{
     cout<<"Inbox:"<<endl;
     set<string, greater<string>>s1; //remain //declare
     while(!databasefile.eof()){
@@ -99,6 +106,8 @@ void viewsenders(){
     cout<<"Whose message would you like to view ?"<<endl;
     cout<<endl;
     databasefile.close();
+    return true;
+    }
 }
 
 
