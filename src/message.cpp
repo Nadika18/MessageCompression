@@ -10,6 +10,7 @@
 #include <iterator>
 #include <set>
 #include "login.cpp"
+#include "compress.cpp"
 
 
 using namespace std;
@@ -132,7 +133,8 @@ void viewmessage(message &p){
     }
     receiverFile.close();
     std::sort(v.begin(), v.end());  //sorting in vector
-    for(auto it = v.begin(); it != v.end(); it++) {
+    for(auto it = v.begin(); it != v.end(); it++) 
+    {
         if(!strcmp(it->sender, currentLoggedInUsername)){
         cout.width(100);
         cout.setf(ios::right);

@@ -1,3 +1,5 @@
+
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -163,85 +165,7 @@ home:
     }
     switch (i)
     {
-        //         case 1:
-        //         privacy:
-        //         {
-        //             std::system("CLS");
-        //             int answer;
-        //             cout<<std::setw(67)<<"PRIVACY\n";
-        //             std::cout  << "\t\t" <<char(218);  for(int i=0; i<20; i++){std::cout  << char(196);}  std::cout << char(191) << std::endl;
-        // std::cout  <<"\t\t" << char(179) << "   1.Follow users   " << char(179) << std::endl;
-
-        // std::cout  << "\t\t" <<char(195);  for(int i=0; i<20; i++){std::cout  << char(196);}  std::cout << char(180)  << std::endl;
-        // std::cout  << "\t\t" <<char(179) << "   2.Block Friend   " << char(179) << std::endl;
-        // std::cout  << "\t\t"<< char(195);  for(int i=0; i<20; i++){std::cout  << char(196);}  std::cout  << char(180)  << std::endl;
-        // std::cout  << "\t\t" <<char(179) << "   3.Exit           " << char(179) << std::endl;
-        // std::cout  << "\t\t" <<char(192);  for(int i=0; i<20; i++){std::cout  << char(196);}   std::cout  << char(217) << std::endl;
-
-        //             cout<<"Enter the required option... ";
-        //             cin>>answer;
-        //             switch(answer)
-        //             {
-        //                 case 1:
-        //                 add_friend();
-        //                 goto privacy;
-        //                 break;
-        //                 case 2:
-        //                 block_friend();
-        //                 goto privacy;
-        //                 break;
-        //                 case 3:
-        //                 goto home;
-        //                 break;
-        //             }
-        //         }
-        //         case 2:
-        //         post:
-        //         {
-        //         std::system("CLS");
-        //                          std::cout << "\t\t" <<char(218);  for(int i=0; i<20; i++){std::cout << char(196);}  std::cout << char(191) << std::endl;
-        // std::cout <<"\t\t" << char(179) << "   1.Write Post     " << char(179) << std::endl;
-        // std::cout << "\t\t" <<char(195);  for(int i=0; i<20; i++){std::cout << char(196);}  std::cout << char(180)  << std::endl;
-        // std::cout << "\t\t" <<char(179) << "   2.View Posts     " << char(179) << std::endl;
-        // std::cout << "\t\t"<< char(195);  for(int i=0; i<20; i++){std::cout << char(196);}  std::cout << char(180)  << std::endl;
-        // std::cout << "\t\t" <<char(179) << "   3.Exit           " << char(179) << std::endl;
-        // std::cout << "\t\t" <<char(192);  for(int i=0; i<20; i++){std::cout << char(196);}   std::cout << char(217) << std::endl;
-
-        //         int y;
-        //         cin>>y;
-        //         {
-        //         switch(y){
-        //             case 1:
-        //             {
-        //             std::system("CLS");
-        //             char postbody[250];
-        //             std::cout<<"Enter the post body"<<std::endl;
-        //             std::cin.ignore();
-        //             std::cin.getline(postbody,150);
-        //             posts post(postbody,1);
-        //             post.sendPosts();
-        //             goto post;
-        //             break;
-        //             }
-        //             case 2:
-        //             {
-        //             std::system("CLS");
-        //             viewPosts();
-        //             char c;
-        //             cout<<"Press c to contine"<<endl;
-        //             cin>>c;
-        //             goto post;
-        //             break;
-        //             }
-        //             case 3:
-        //             goto home;
-        //             }
-
-        //         }
-        //         break;
-        //         }
-
-        //             break;
+      
     case 3:
     message:
     {
@@ -295,9 +219,14 @@ home:
                 else
                 {
                     char msgbody[250];
+                  
                     std::cout << "Enter the msg body" << std::endl;
                     std::cin.ignore();
+                   
+                    // getline(cin, msgbody);
                     std::cin.getline(msgbody, 150);
+                     compress((string)msgbody);
+                //   strcpy(msgbody,ans);
                     message msg(receiver, msgbody);
                     msg.sendMessage();
                 }
